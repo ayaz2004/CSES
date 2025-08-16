@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long 
 
 // Brute Force Approach
 // vector<int> solve1(string s){
@@ -59,7 +60,7 @@ vector<int> z_func(string s){
     int n=s.length();
     vector<int> z(n);
     int l=0, r=0;
-    for(int i=0; i<n; i++){
+    for(int i=1; i<n; i++){
         if(i<=r) z[i]=min(r-i+1, z[i-l]);
         while(i+z[i]<n && s[z[i]]==s[i+z[i]]) z[i]++;
         if(i+z[i]-1>r){
@@ -79,7 +80,7 @@ vector<int> solve3(string s){
    return ans;
 }
 
-int main(){
+int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
